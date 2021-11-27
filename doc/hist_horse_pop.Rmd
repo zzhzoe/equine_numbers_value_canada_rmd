@@ -2,7 +2,7 @@
 title: "Historical horse population in Canada"
 bibliography: references.bib
 params:
-  province: "Alberta"
+  province: "Ontario"
 output: html_document
 ---
 
@@ -73,7 +73,7 @@ Below we zoom in and look at the province of `r params$province`:
 
 ```{r plot province, fig.width=5, fig.height=4,fig.height=4, fig.cap = paste("Figure 2. Historical number of horses in ",params$province), out.width = "50%"}
 province_plot <- horse_pop %>% 
-  filter(GEO == "Alberta") %>% 
+  filter(GEO == params$province) %>% 
   ggplot(aes(x = Ref_Date, y = Value)) +
   geom_point() +
   geom_line() +
