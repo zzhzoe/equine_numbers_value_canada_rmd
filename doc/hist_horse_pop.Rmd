@@ -1,5 +1,7 @@
 ---
 title: "Historical horse population in Canada"
+params:
+  province: "Alberta"
 output: html_document
 ---
 
@@ -66,7 +68,7 @@ kable(max_horses,
       caption = "Table 1. Maximum and minimum number of horses for each province between 1940 - 1972")
 ```
 
-Below we zoom in and look at the province of Alberta:
+Below we zoom in and look at the province of `r params$province`:
 
 ```{r plot province, fig.width=5, fig.height=4,fig.height=4, fig.cap = paste("Figure 2. Historical number of horses in ",params$province), out.width = "50%"}
 province_plot <- horse_pop %>% 
